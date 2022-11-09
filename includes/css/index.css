@@ -1,0 +1,102 @@
+body {
+    background-image: url("../images/background1.jpg");
+   }
+
+  .flex-containers-right {
+    display: flex;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+    margin: 5%;
+    background-color: #5d4954;
+    border-radius: 25px;
+    
+    /*aanmaken van grid in div */
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "flex-containers-right-TL flex-containers-right-TR ."
+      "flex-containers-right-MID flex-containers-right-MID ."
+      "flex-containers-right-BL flex-containers-right-BR .";
+  }
+  .flex-containers-right-TL{
+    grid-area: flex-containers-right-TL;
+    color: aliceblue;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .flex-containers-right-TR{
+    grid-area: flex-containers-right-TR;
+    color: aliceblue;
+    text-align: center;
+    grid-column-start: 2;
+    grid-row-end: 1;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-containers-right-MID{
+    grid-area: flex-containers-right-MID;
+    color: aliceblue;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-containers-right-BR{
+    grid-area: flex-containers-right-BR;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    color: aliceblue;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-containers-right-BL{
+    grid-area: flex-containers-right-BL; 
+    grid-column-start: 1;
+    grid-row-end: 3;
+    color: aliceblue;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img[alt~="display"] {
+    width: auto;
+    max-width: 50%;
+    padding: 2%;
+}
+  
+  @media screen and (max-width: 1050px) {
+    body{
+      display: flex;
+      flex-direction: column;
+    }
+    
+    img[alt~="display"] {
+      height: 40%;
+      width: auto;
+      padding: 2%;
+    }
+  }
