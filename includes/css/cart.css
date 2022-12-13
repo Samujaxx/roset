@@ -36,10 +36,10 @@ body {
   }
 
   .cart { 
-    grid-area: login-register-form;
+    grid-area: cart;
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+    color: aliceblue;
   }
 

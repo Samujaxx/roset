@@ -1,0 +1,14 @@
+.flex-containers-right {
+    display: flex;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+    margin: 5%;
+    background-color: #5d4954;
+    border-radius: 25px;
+}

@@ -19,7 +19,7 @@
                     <a href="index.php">Over ons</a>
                 </li>
                 <li>
-                    <a href="cart.php">Bestellen</a>
+                    <a href="order.php">Bestellen</a>
                 </li>
                 <li>
                     <a href="blog.php">Blog</a>
@@ -30,7 +30,10 @@
                 <li>
                     <a href="cart.php">Winkelmandje</a>
                 </li>
-                <?php if(!empty($_SESSION['role'] == "user") || $_SESSION['role'] == "admin"){ ?>
+                <?php if(!empty($_SESSION['logged_in'])){ ?>
+                    <li>
+                        <a href="account.php">account</a>
+                    </li>
                     <li>
                         <a href="logout.php">logout</a>
                     </li>

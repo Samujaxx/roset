@@ -16,13 +16,15 @@ if (is_array($gebruiker)) {
             $_SESSION['logged_in'] = true;
             $_SESSION['just_logged_in'] = true;
             $_SESSION['id'] = $gebruiker['id'];
-            $_SESSION['role'] = "medewerker";
+            $_SESSION['userData'] = $gebruiker;
+            $_SESSION['role'] = "admin";
             header("Location: index.php");
             exit;
         }
         $_SESSION['logged_in'] = true;
         $_SESSION['just_logged_in'] = true;
         $_SESSION['id'] = $gebruiker['id'];
+        $_SESSION['userData'] = $gebruiker;
         $_SESSION['role'] = "klant";
         header("Location: index.php");
         exit;

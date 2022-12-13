@@ -16,11 +16,11 @@
 </html>
     <div class="flex-containers-left">
         <div class="logo"><img src="includes/images/LOGO.png" alt="LOGO"></div>
-        <div class="fotw"> Smaak Van de Week</br><img class="showcaseImg" src="includes/images/ice cream/aardbij.jpg" alt="LOGO"></br> Aardbei!</div>
+        <div class="fotw"> Smaak Van de Week</br><img class="showcaseImg" src="includes/images/flavors/aardbei.webp" alt="LOGO"></br> Aardbei!</div>
         <div class="flavours">
             Populaire smaken!</br>
-            <img class="showcaseImg" src="includes/images/ice cream/aardbij.jpg" alt="LOGO"></br>
-            <img class="showcaseImg" src="includes/images/ice cream/banaan.jpg" alt="LOGO"></br>
-            <img class="showcaseImg" src="includes/images/ice cream/citroen.jpg" alt="LOGO">
+            <img class="showcaseImg" src="includes/images/flavors/aardbei.webp" alt="LOGO"></br>
+            <img class="showcaseImg" src="includes/images/flavors/banaan.webp" alt="LOGO"></br>
+            <img class="showcaseImg" src="includes/images/flavors/citroen.webp" alt="LOGO">
         </div>
     </div>
