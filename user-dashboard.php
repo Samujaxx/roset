@@ -3,16 +3,18 @@ include("includes/session.php");
 require('includes/database.php');
 require('includes/user-access.php');
 
+if (empty($_SESSION['userData'])) {
+
+    header("Location: login.php");
+}
+
 $sql = "SELECT * FROM users ";
 
 if ($result = mysqli_query($conn, $sql)) {
     $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
-if (empty($_SESSION['userData'])) {
 
-    header("Location: login.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

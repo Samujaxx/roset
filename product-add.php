@@ -2,6 +2,11 @@
 include("includes/session.php");
 require('includes/database.php');
 require('includes/user-access.php');
+
+if (empty($_SESSION['userData'])) {
+
+    header("Location: login.php");
+}
 ?>
 
 <!DOCTYPE html>
