@@ -6,8 +6,7 @@ require 'includes/database.php';
 
 $sql = "SELECT * FROM users WHERE id = {$_SESSION['id']}";
 
-if($_SESSION['id'] == 0)
-{
+if ($_SESSION['id'] == 0) {
     header("Location: login.php");
 }
 
@@ -20,6 +19,7 @@ if ($result = mysqli_query($conn, $sql)) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,80 +29,62 @@ if ($result = mysqli_query($conn, $sql)) {
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title>Home</title>
 </head>
-    <body>
 
-    <?php 
-    include("navbar.php"); 
+<body>
+
+    <?php
+    include("navbar.php");
     include("mainmenu.php");
     ?>
 
-                <div class="flex-containers-right">
-                    <h1>Uw gegevens</h1>
-                    <?php
-                    if (!empty($_SESSION['userData'])) {
-                    if ($_SESSION["logged_in"] == true) {  ?>
-                    <h2 style="text-align: left;">
-                    <?php echo "ID : " . $_SESSION['userData']['id'];?><br>
-                    Rol: <?php echo $user["role"]?><br>
-                    Voornaam : <?php echo $user["firstname"] ?><br>
-                    Achternaam : <?php echo $user["lastname"] ?><br>
-                    Email : <?php echo $user["email"]?><br>
-                    Geboortedatum : <?php echo $user["date_of_birth"]?><br>
-                    Telefoonnummer : <?php echo $user["phonenumber"]?><br>
-                    Adres : <?php echo $user["adress"]?><br>
-                    Postcode : <?php echo $user["zipcode"]?><br>
-                    Stad : <?php echo $user["city"]?><br>
+    <div class="flex-containers-right">
+        <h1 class="title">Uw gegevens</h1>
+        <?php
+        if (!empty($_SESSION['userData'])) {
+            if ($_SESSION["logged_in"] == true) {  ?>
+                <div class="info">
+                    <h2>
+                        <ul>
+                            <li><?php echo "ID : " . $_SESSION['userData']['id']; ?></li>
+                            <li> Rol: <?php echo $user["role"] ?></li>
+                            <li> Voornaam : <?php echo $user["firstname"] ?></li>
+                            <li> Achternaam : <?php echo $user["lastname"] ?></li>
+                            <li> Email : <?php echo $user["email"] ?></li>
+                            <li> Geboortedatum : <?php echo $user["date_of_birth"] ?></li>
+                            <li> Telefoonnummer : <?php echo $user["phone"] ?></li>
+                            <li> Adres : <?php echo $user["adress"] ?></li>
+                            <li> Postcode : <?php echo $user["zipcode"] ?></li>
+                            <li> Stad : <?php echo $user["city"] ?></li>
+                        </ul>
                     </h2>
-                    <h3>
-                    <a href="account-edit.php?id=<?php echo $_SESSION['userData']['id']?>" style="color: green;">Gegevens Updaten</a>
-                    <a style="color: red;" href="logout.php?id=<?php echo $_SESSION['userData']['id']?>">Uitloggen</a>
+                </div>
+                <div class="buttons">
+                    <a href="account-edit.php?id=<?php echo $_SESSION['userData']['id'] ?>" style="color: green;">Gegevens Updaten</a>
+                    <a style="color: red;" href="logout.php?id=<?php echo $_SESSION['userData']['id'] ?>">Uitloggen</a>
                     <?php
-                    if ($_SESSION['userData']['role'] == 'medewerker' || $_SESSION['userData']['role'] == 'manager' ){
-                        echo '<p style="text-align:left;">';
-                        echo "<a href=dashboard.php>Dashboard voor medewerkers</a>";
-                        echo '</p>';
+                    if ($_SESSION['userData']['role'] == 'admin' || $_SESSION['userData']['role'] == 'medewerker') {
+                        echo "<a href=user-dashboard.php>Dashboard voor medewerkers</a>";
                     }
                     ?>
-                    </h3>
-                    </p>
                 </div>
+                </p>
+    </div>
 
-                <?php }
-                } else {
-                    echo "<h2>";
-                    echo "Je bent nog niet ingelogd, registreer of log in"; ?>
+<?php }
+        } else {
+            echo "<h2>";
+            echo "Je bent nog niet ingelogd, registreer of log in"; ?>
 
-                    <li><a href="registreren.html">Registreren</a></li>
-                    <li><a href="login.php">Inloggen</a></li>
-                </h2>
-                
+<li><a href="registreren.html">Registreren</a></li>
+<li><a href="login.php">Inloggen</a></li>
+<?php
 
-                <?php }  ?>
+?>
+</h2>
 
-                
 
-                <div class="content-c" style="display: none;">
-                    <h3>Populaire Smaken</h3>
-                    <p>Aardbei</p>
-                    <img src="../Website-Roset/images/smaken/aardbei.png" class="img-c">
-                    <p>Mango</p>
-                    <img src="../Website-Roset/images/smaken/mango.png" class="img-c">
-                </div>
-                <div class="content-footer" style="display: none;">
-                    <aside class="footer-left">
-                        <h3>Ons Adres:</h3>
-                        <p>Castricum</p>
-                    </aside>         
-                    <aside class="footer-center">
-                        <h3>Wij bezorgen in...</h3>
-                        <p>Heiloo $12</p>
-                        <p>Limmen $12</p>
-                        <p>Akersloot $15</p>
-                    </aside>
-                    <aside class="footer-right">
-                        <h3 style="text-decoration: underline; color:blue;">Onze voorwaarden</h3>
-                    </aside>
-                </div>
-            </div>
-    </body>
+<?php }  ?>
+</div>
+</body>
+
 </html>
