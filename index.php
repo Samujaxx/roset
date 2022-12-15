@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="">
     <title>Over Ons</title>
+    <meta description="">
     <link rel="stylesheet" href="includes/css/index.css">
 </head>
 
