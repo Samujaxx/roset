@@ -61,7 +61,7 @@ if ($result = mysqli_query($conn, $sql)) {
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTelefoonnummer">Telefoonnummer</label>
-                    <input type="text" class="form-control" name="phonenumber" value="<?php echo $user["phone"] ?>">
+                    <input type="text" class="form-control" name="phonenumber" value="<?php echo $user["phonenumber"] ?>">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTelefoonnummer">Adres</label>

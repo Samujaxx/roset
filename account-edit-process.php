@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
         firstname = '$firstname', 
         lastname = '$lastname', 
         email = '$email', 
-        phone = '$phonenumber',
+        phonenumber = '$phonenumber',
         adress = '$address',
         zipcode = '$zipcode',
         city = '$city',

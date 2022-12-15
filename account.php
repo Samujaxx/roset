@@ -51,7 +51,7 @@ if ($result = mysqli_query($conn, $sql)) {
                             <li> Achternaam : <?php echo $user["lastname"] ?></li>
                             <li> Email : <?php echo $user["email"] ?></li>
                             <li> Geboortedatum : <?php echo $user["date_of_birth"] ?></li>
-                            <li> Telefoonnummer : <?php echo $user["phone"] ?></li>
+                            <li> Telefoonnummer : <?php echo $user["phonenumber"] ?></li>
                             <li> Adres : <?php echo $user["adress"] ?></li>
                             <li> Postcode : <?php echo $user["zipcode"] ?></li>
                             <li> Stad : <?php echo $user["city"] ?></li>

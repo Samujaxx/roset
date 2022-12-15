@@ -2,12 +2,19 @@
 include("includes/session.php");
 require('includes/database.php');
 
+$whereIn = implode(',', $_SESSION['winkelwagen']);
+// die($whereIn);
+$sql =
+    "SELECT * FROM products WHERE id in ($whereIn)";
 
+if ($result = mysqli_query($conn, $sql)) {
+    $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
 
-if (empty($_SESSION['userData'])) {
+if(empty($_SESSION['userData'])){
 
     header("Location: login.php");
-}
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,24 +35,45 @@ if (empty($_SESSION['userData'])) {
     ?>
 
     <div class="flex-containers-right">
-        <?php
-        if (empty($_SESSION['winkelwagen'])) { ?>
-            <h1 class="head-title"> welkom bij je Winkelmandje </h1>
-            <div class="cart"> zie je hier niets ga snel naar de bestellen pagina en bestel iets</div>
-        <?php } else { ?>
-            <div class="cart"><?php
-                                print_r($_SESSION['winkelwagen']);
+    <p id="items"></p>
+             <a href="leeg-winkelwagen.php">Delete</a>
+            <p style="text-align: left;">UserID : <?php echo $_SESSION['id']?></p>
+             <form action="winkelwagen-process.php" method="post" name="submit">
+                 <h1>Bestellen</h1>
+                 <h2 style="text-align: left;">Jouw bestelling : </h2>
+                 <?php foreach ($products as $product) : ?>
+                     <p style="text-align: left;"><?php echo $product['name'] ?> </p>
 
-                                //veranderd elk item in de array naar een string
-                                $whereIn = implode(',', $_SESSION['winkelwagen']);
-                                // die($whereIn);
-                                $sql =
-                                    "SELECT * FROM products WHERE name in ($whereIn)";
+                 <?php endforeach; ?>
 
-                                if ($result = mysqli_query($conn, $sql)) {
-                                    $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                                } ?></div>
-        <?php } ?>
+                 <input type="hidden" id="winkelmandids" name="productid" value="<?php echo $whereIn ?> ">
+                 <input type="hidden" id="userids" name="userid" value="<?php echo $_SESSION['id'] ?> ">
+                 <p style="text-align: left;">
+                     Kies of je het ijs wil laten bezorgen of zelf af wilt halen.
+                     <select name="method" id="method">
+                     <option value="LatenBezorgen">Laten bezorgen (Tegen extra kosten)</option>
+                     <option value="Afhalen">Zelf Afhalen (Gratis)</option>
+                 </select><br>
+                 </p>
+
+                 <label style="font-weight: 600;" for="fname">Volledige Naam :</label>
+                 <input type="text" id="fullname" name="fullname"><br>
+                 <!--
+                 <label style="font-weight: 600;" for="zipcode">Postcode :</label>
+                 !-->
+                 <label style="font-weight: 600;" for="zipcode">Plaats :</label>
+                 <select name="city" id="city">
+                     <option value="Heiloo">Heiloo</option>
+                     <option value="Limmen">Limmen</option>
+                     <option value="Akersloot">Akersloot</option>
+                 </select><br>
+
+                 <label style="font-weight: 600;" for="address">Adres :</label>
+                 <input type="text" id="address" name="address"><br>
+                 <!-- <label style="font-weight: 600;" for="pickup">Bezorg of Afhaaltijd : </label>
+                 <input type="time" id="zipcode" name="pickup"> <br>  -->
+                 <input type="submit" name="submit" value="Plaats bestelling" style="background-color: rgb(6, 153, 221); color:black;">
+             </form>
 
     </div>
 </body>
