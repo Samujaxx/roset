@@ -14,7 +14,8 @@
 <body>
     <div class="navbar">
         <nav>
-            <ul class="nav-links">
+            <div class="nav-links">
+            <ul>
                 <li>
                     <a href="index.php">Over ons</a>
                 </li>
@@ -45,6 +46,7 @@
                 <?php }?>
 
             </ul>
+                </div>
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>

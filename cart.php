@@ -58,8 +58,8 @@ if ($result = mysqli_query($conn, $sql)) {
                 <input type="text" id="fullname" name="fullname"><br>
                 <label style="font-weight: 600;" for="zipcode">Plaats</label>
                 <select name="city" id="city">
-                    <option value="Heiloo">Castricum</option>
-                    <option value="Limmen">Bakkum</option>
+                    <option value="Castricum">Castricum</option>
+                    <option value="Bakkum">Bakkum</option>
                     <option value="Akersloot">Akersloot</option>
                 </select><br>
                 <label style="font-weight: 600;" for="adress">Adres</label>

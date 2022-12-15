@@ -22,6 +22,13 @@ nav{
 .nav-links li{
     list-style: none;
 }
+ .nav-links ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding-inline-start: 0;
+ }
 
 .nav-links a{
     color: aliceblue;
@@ -32,21 +39,25 @@ nav{
     height: auto;
 }
 
-.burger{
-    margin-right: 2%;
-    display: none;
-}
+@media screen and (max-width: 765px) {
 
-.burger div{
-    width: 25px;
-    height: 5px;
-    background-color: aliceblue;
-    margin: 20%;
-}
-
-@media screen and (max-width:1050px) {
-    .nav-links{
-        position: absolute;
-        display: block;
+    .nav{
+        display: flex;
+        align-items: center;
+        min-height: 8vh;
+        background-color: #5d4954;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 25px;
+        width: 100%;
+        height: auto;
     }
+    .nav-links ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding-inline-start: 0;
+     }
 }

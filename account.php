@@ -51,7 +51,7 @@ if ($result = mysqli_query($conn, $sql)) {
                             <li> Achternaam : <?php echo $user["lastname"] ?></li>
                             <li> Email : <?php echo $user["email"] ?></li>
                             <li> Geboortedatum : <?php echo $user["date_of_birth"] ?></li>
-                            <li> Telefoonnummer : <?php echo $user["phonenumber"] ?></li>
+                            <li> Telefoonnummer : <?php echo $user["phone"] ?></li>
                             <li> Adres : <?php echo $user["adress"] ?></li>
                             <li> Postcode : <?php echo $user["zipcode"] ?></li>
                             <li> Stad : <?php echo $user["city"] ?></li>
@@ -59,11 +59,11 @@ if ($result = mysqli_query($conn, $sql)) {
                     </h2>
                 </div>
                 <div class="buttons">
-                    <a href="account-edit.php?id=<?php echo $_SESSION['userData']['id'] ?>" style="color: green;">Gegevens Updaten</a>
-                    <a style="color: red;" href="logout.php?id=<?php echo $_SESSION['userData']['id'] ?>">Uitloggen</a>
+                    <button><a href="account-edit.php?id=<?php echo $_SESSION['userData']['id'] ?>" style="color: green;">Gegevens Updaten</a></button>
+                    <button><a style="color: red;" href="logout.php?id=<?php echo $_SESSION['userData']['id'] ?>">Uitloggen</a></button>
                     <?php
                     if ($_SESSION['userData']['role'] == 'admin' || $_SESSION['userData']['role'] == 'medewerker') {
-                        echo "<a href=user-dashboard.php>Dashboard voor medewerkers</a>";
+                        echo "<button><a href=user-dashboard.php>Dashboard voor medewerkers</a></button>";
                     }
                     ?>
                 </div>

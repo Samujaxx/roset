@@ -20,7 +20,6 @@
     <?php 
     include("navbar.php"); 
     include("mainmenu.php");
-    var_dump($_SESSION['role']);
     ?>
 
 

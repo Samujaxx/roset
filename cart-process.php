@@ -13,13 +13,13 @@ if (isset($_POST["submit"])) {
 
     if($_POST['method'] = 'pickup')
     {
-        $pickup = 'true';
-        $delivery = 'false';
+        $pickup = '1';
+        $delivery = '0';
     }
     if($_POST['method'] = 'delivery')
     {
-        $pickup = 'false';
-        $delivery = 'true';
+        $pickup = '0';
+        $delivery = '1';
     }
 
     require "includes/database.php";

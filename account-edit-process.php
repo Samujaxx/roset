@@ -9,7 +9,7 @@ if (isset($_POST["submit"])) {
         && !empty($_POST["lastname"])
         && !empty($_POST["email"])
         && !empty($_POST["date_of_birth"])
-        && !empty($_POST["phonenumber"])
+        && !empty($_POST["phone"])
         && !empty($_POST["address"])
         && !empty($_POST["zipcode"])
         && !empty($_POST["city"])
@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
         $firstname = $_POST["firstname"];
         $lastname = $_POST["lastname"];
         $email = trim($_POST["email"]);
-        $phonenumber = $_POST["phonenumber"];
+        $phonenumber = $_POST["phone"];
         $date_of_birth = $_POST["date_of_birth"];
         $address = $_POST["address"];
         $zipcode = $_POST["zipcode"];
@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
         firstname = '$firstname', 
         lastname = '$lastname', 
         email = '$email', 
-        phonenumber = '$phonenumber',
+        phone = '$phonenumber',
         adress = '$address',
         zipcode = '$zipcode',
         city = '$city',

@@ -39,8 +39,10 @@ if ($result = mysqli_query($conn, $sql)) {
     include("mainmenu.php");
     ?>
     <div class="flex-containers-right">
-        <div class="content-b">
+        <div class="title">
             <h2>Je gegevens bewerken</h2>
+            </div>
+            <div class="info">
             <form action="account-edit-process.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $user["id"] ?>">
                 <div class="form-group">
@@ -61,7 +63,7 @@ if ($result = mysqli_query($conn, $sql)) {
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTelefoonnummer">Telefoonnummer</label>
-                    <input type="text" class="form-control" name="phonenumber" value="<?php echo $user["phonenumber"] ?>">
+                    <input type="text" class="form-control" name="phone" value="<?php echo $user["phone"] ?>">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTelefoonnummer">Adres</label>
