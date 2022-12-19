@@ -12,5 +12,5 @@ $_SESSION['winkelwagen'] = array();
 //voegt elementen/waardes aan de array, zet id in de array.
 array_push($_SESSION['winkelwagen'], $_GET['id']);
 
-header("Location: cart.php");
+header("Location: order.php");
 ?>

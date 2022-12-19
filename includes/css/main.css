@@ -76,6 +76,27 @@ body {
       flex-direction: column;
     }
     
+    .flex-containers-left{
+      padding-bottom: 75%;
+    }
+
+    img[alt~="display"] {
+      height: 40%;
+      width: auto;
+      padding: 2%;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    body{
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .flex-containers-left{
+      padding-bottom: 50%;
+    }
+
     img[alt~="display"] {
       height: 40%;
       width: auto;

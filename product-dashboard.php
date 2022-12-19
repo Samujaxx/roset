@@ -63,8 +63,8 @@ if (empty($_SESSION['userData'])) {
             </table>
         </div>
         <div class="buttons">
-            <a style="color: red;" href="logout.php?id=<?php echo $_SESSION['userData']['id'] ?>">Uitloggen</a>
-            <a style="color: red;" href="product-add.php?id=<?php echo $_SESSION['userData']['id'] ?>">product toevoegen</a>
+            <button><a style="color: red;" href="logout.php?id=<?php echo $_SESSION['userData']['id'] ?>">Uitloggen</a></button>
+            <button><a style="color: green;" href="product-add.php?id=<?php echo $_SESSION['userData']['id'] ?>">product toevoegen</a></button>
 
         </div>
     </div>

@@ -51,3 +51,7 @@
 .info ul li{
     list-style: none;
 }
+
+@media screen and (max-width: 1050px){
+    
+  }

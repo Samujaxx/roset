@@ -14,7 +14,8 @@
 <body>
     <div class="navbar">
         <nav>
-            <ul class="nav-links">
+            <div class="nav-links">
+            <ul>
                 <li>
                     <a href="user-dashboard.php">gebruikers</a>
                 </li>
@@ -28,12 +29,9 @@
                     <a href="index.php">home</a>
                 </li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
             </div>
         </nav>
+
     </div>
 </body>
 

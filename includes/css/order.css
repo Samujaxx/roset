@@ -6,8 +6,6 @@
   grid-row-end: 3;
   align-self: center;
   justify-self: center;
-  height: 100%;
-  width: 100%;
   margin: 5%;
   background-color: #5d4954;
   border-radius: 25px;
@@ -39,15 +37,17 @@
   padding-left: 1%;
   padding-bottom: 1%;
   padding-right: 1%;
+  justify-content: center;
+  justify-content: space-around;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "row-1 row-1 row-1"
-    "row-2 row-2 row-2"
-    "row-3 row-3 row-3";
+    "row row row"
+    "row row row"
+    "row row row";
 }
 
 .order-button{
@@ -59,30 +59,27 @@
     margin: 1%;
 }
 
-.row-1 {
-  grid-area: row-1;
+.buttons {
+  grid-area: row;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.row-2 {
-  grid-area: row-2;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.row-3 {
-  grid-area: row-3;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .img-ice{
-    height: 100%;
+    height: auto;
     width: 100%;
     border-radius: 25%;
+}
+
+.rows{grid-area: row;
+  display: flex;
+  justify-content: center;
+
+}
+
+@media screen and (max-width: 380px) {
+  .buttons{
+    width: 100%;
+    overflow:scroll;
+  }
 }

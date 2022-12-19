@@ -64,7 +64,7 @@ if ($result = mysqli_query($conn, $sql)) {
             </table>
         </div>
         <div class="buttons">
-            <a style="color: red;" href="logout.php?id=<?php echo $_SESSION['userData']['id'] ?>">Uitloggen</a>
+           <button> <a style="color: red;" href="logout.php?id=<?php echo $_SESSION['userData']['id'] ?>">Uitloggen</a> </button>
 
         </div>
     </div>
