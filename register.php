@@ -8,6 +8,7 @@ include("includes/session.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="register page">
     <link rel="stylesheet" href="includes/css/main.css">
     <link rel="stylesheet" href="includes/css/login-register.css">
     <title>Registreer je hier!</title>
