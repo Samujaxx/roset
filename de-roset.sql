@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2022 at 07:32 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Gegenereerd op: 20 dec 2022 om 22:32
+-- Serverversie: 10.4.25-MariaDB
+-- PHP-versie: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,40 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Tabelstructuur voor tabel `orders`
 --
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
+  `orderdate` date DEFAULT NULL,
   `adress` varchar(255) NOT NULL,
   `pickup` tinyint(1) NOT NULL,
   `delivery` tinyint(1) NOT NULL,
   `isReceived` tinyint(1) NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `customer_name` varchar(100) NOT NULL,
   `city` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `orders`
+-- Gegevens worden geëxporteerd voor tabel `orders`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `product_id`, `adress`, `pickup`, `delivery`, `isReceived`, `name`, `city`) VALUES
-(4, 3, 4, 'joman 61', 0, 0, 0, 'faruk', 'Heiloo'),
-(5, 3, 4, 'joman 61', 0, 0, 0, 'faruk', 'Heiloo'),
-(6, 3, 5, 'joman 61', 0, 0, 0, 'faruk', 'Heiloo'),
-(7, 3, 6, 'joman 61', 0, 0, 0, 'faruk', 'Heiloo'),
-(8, 3, 8, 'joman 61', 0, 0, 0, 'faruk', 'Heiloo'),
-(9, 3, 1, 'joman 61', 0, 0, 0, 'faruk', 'Heiloo'),
-(10, 3, 6, 'joman 61', 0, 0, 0, 'faruk', 'Heiloo'),
-(11, 3, 6, 'joman 61', 0, 0, 0, 'faruk', 'Heiloo'),
-(12, 3, 4, 'hahahahaahahahaahahah', 0, 0, 0, 'faruk', 'Heiloo');
+INSERT INTO `orders` (`id`, `user_id`, `product_id`, `orderdate`, `adress`, `pickup`, `delivery`, `isReceived`, `customer_name`, `city`) VALUES
+(21, 3, 3, '2022-12-20', 'awdeawdawdawdwadad', 0, 1, 0, 'wdawdawdawdad', 'Castricum'),
+(22, 3, 1, '2022-12-20', 'awdeawdawdawdwadad', 0, 1, 0, 'wdawdawdawdad', 'Castricum');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Tabelstructuur voor tabel `products`
 --
 
 CREATE TABLE `products` (
@@ -70,13 +64,13 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `products`
+-- Gegevens worden geëxporteerd voor tabel `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `price_kg`, `fotw`, `category`, `image`) VALUES
-(1, 'aardbei', '8.00', 1, 'sweet', 'aardbei'),
+(1, 'aardbei', '8.00', 0, 'sweet', 'aardbei'),
 (3, 'banaan', '8.00', 0, 'schepijs', 'banaan'),
-(4, 'caramel', '8.00', 0, 'schepijs', 'caramel'),
+(4, 'caramel', '8.00', 1, 'schepijs', 'caramel'),
 (5, 'chocolade', '8.00', 0, 'schepijs', 'chocolade'),
 (6, 'citroen', '8.00', 0, 'schepijs', 'citroen'),
 (7, 'cookiedough', '8.00', 0, 'schepijs', 'cookiedough'),
@@ -88,7 +82,7 @@ INSERT INTO `products` (`id`, `name`, `price_kg`, `fotw`, `category`, `image`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabelstructuur voor tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -106,7 +100,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Gegevens worden geëxporteerd voor tabel `users`
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `date_of_birth`, `phone`, `adress`, `zipcode`, `city`, `role`) VALUES
@@ -114,55 +108,55 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `date_o
 (4, 'homer', 'simpson', 'homer@simpsons.com', '12345', '1997-06-20', '0987654321', 'home 1', '4567AA', 'simpsonsland', 'user');
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `orders`
+-- Indexen voor tabel `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
+-- Indexen voor tabel `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT voor een tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT voor een tabel `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `orders`
+-- Beperkingen voor tabel `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
