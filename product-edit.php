@@ -14,7 +14,7 @@ if ($result = mysqli_query($conn, $sql)) {
     $product = mysqli_fetch_assoc($result);
 
     if (is_null($product)) {
-        header("location: product-overview.php");
+        header("location: product-dashboard.php");
     }
 }
 

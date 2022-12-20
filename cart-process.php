@@ -9,7 +9,7 @@ if (isset($_POST["submit"])) {
     $adress = $_POST['adress'];
     $naam = $_POST['fullname'];
     $city = $_POST['city'];
-
+    $date = "".date("Y-m-d");
 
     if($_POST['method'] = 'pickup')
     {
@@ -27,8 +27,8 @@ if (isset($_POST["submit"])) {
 
     foreach ($product as $prods) :
 
-        $sql = "INSERT INTO orders (user_id, product_id, adress, pickup, delivery, name, city)
-        VALUES ('$user','$prods', '$adress', '$pickup', '$delivery', '$naam', '$city')";
+        $sql = "INSERT INTO orders (user_id, product_id, orderdate, adress, pickup, delivery, name, city)
+                            VALUES ('$user','$prods', '$date', '$adress', '$pickup', '$delivery', '$naam', '$city')";
         mysqli_query($conn, $sql);
 
     endforeach;
