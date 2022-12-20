@@ -1,5 +1,12 @@
 <?php 
-    include("includes/session.php"); 
+    include("includes/session.php");
+    require("includes/database.php");
+    
+    $flavour_of_the_week = "SELECT * FROM products where fotw = 1 limit 1";
+    
+    if ($fotwresult = mysqli_query($conn, $flavour_of_the_week)) {
+        $flavour = mysqli_fetch_all($fotwresult, MYSQLI_ASSOC);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +24,12 @@
 </html>
     <div class="flex-containers-left">
         <div class="logo"><img src="includes/images/LOGO.png" alt="LOGO"></div>
-        <div class="fotw"> Smaak Van de Week</br><img class="showcaseImg" src="includes/images/flavors/aardbei.webp" alt="LOGO"></br> Aardbei!</div>
+        <?php foreach ($flavour as $flavours) : ?>
+            <div class="fotw"> Smaak Van de Week!</br><img class="showcaseImg" src="includes/images/flavors/<?php echo $flavours['image']?>.webp" alt="LOGO"></br><?php echo $flavours['name'] ?></div>
+        <?php endforeach; ?>
         <div class="flavours">
             Populaire smaken!</br>
-            <img class="showcaseImg" src="includes/images/flavors/aardbei.webp" alt="LOGO"></br>
+            <img class="showcaseImg" src="includes/images/flavors/aardbei.webp" alt="LOGO">
             <img class="showcaseImg" src="includes/images/flavors/banaan.webp" alt="LOGO"></br>
             <img class="showcaseImg" src="includes/images/flavors/citroen.webp" alt="LOGO">
         </div>

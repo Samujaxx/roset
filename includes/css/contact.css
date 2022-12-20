@@ -1,0 +1,38 @@
+.flex-containers-right {
+    display: flex;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: center;
+    justify-self: center;
+    margin: 5%;
+    height: 100%;
+    width: 100%;
+    background-color: #5d4954;
+    border-radius: 25px;
+    
+    /*aanmaken van grid in div */
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 4em 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "title title title"
+      "text text text"
+      "text text text"
+      "text text text"; 
+  }
+
+.title { grid-area: title; 
+    color: aliceblue;
+    align-self: center;
+    justify-self: center;
+}
+
+.text { grid-area: text; 
+    color: aliceblue;
+    align-self: center;
+    justify-self: center;
+    padding: 3%;
+}
