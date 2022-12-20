@@ -45,11 +45,11 @@ if ($result = mysqli_query($conn, $sql)) {
                         <form action="product-edit-process.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $product["id"] ?>">
                             <h2>
-                                <label for="name">Naam van het product</label>
+                                <label for="name">Product</label>
                                 <input type="text" class="form-control" name="name" value="<?php echo $product["name"] ?>"><br>
-                                <label for="name">Prijs per kilo</label>
+                                <label for="name">Prijs/kg</label>
                                 <input type="text" class="form-control" name="price_kg" value="<?php echo $product["price_kg"] ?>"><br>
-                                <label for="name">Smaak van de week</label>
+                                <label for="name">FOTW</label>
                                 <input type="text" class="form-control" name="fotw" value="<?php echo ($product["fotw"] == 0) ? "NO" : "YES"   ?>"><br>
                                 <label for="name">Categorie</label>
                                 <input type="text" class="form-control" name="category" value="<?php echo $product["category"] ?>">

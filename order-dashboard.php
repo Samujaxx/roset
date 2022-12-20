@@ -31,7 +31,7 @@ if ($result = mysqli_query($conn, $sqledit)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="user dashboard">
     <link rel="stylesheet" href="includes/css/main.css">
-    <link rel="stylesheet" href="includes/css/dashboard.css">
+    <link rel="stylesheet" href="includes/css/order-dashboard.css">
     <title>Winkelmandje</title>
 </head>
 

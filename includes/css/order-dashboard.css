@@ -60,13 +60,20 @@
     .info table tbody tr td{
         font-size: 75%;
     }
+    .info table{
+        overflow: scroll;
+        padding-left: 70%;
+    }
+
+  }
+  @media screen and (max-width: 800px){
     .info{
         grid-area: info;
-        display: flex;
-        justify-content: center;
         align-items: baseline;
         color: aliceblue;
         font-weight: bold;
+        overflow: scroll;
+        padding-left: 10%;
     }
 
   }
