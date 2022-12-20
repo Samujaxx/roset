@@ -3,17 +3,19 @@
 require 'includes/database.php';
 require 'includes/session.php';
 
+//pakt de id uit de url
 $id = $_GET["id"];
 
+//selecteer de row met de bijbehoorende informatie van de id
 $sql = "SELECT * FROM users WHERE id = $id LIMIT 1";
 
-
+//inject de query in sql
 if ($result = mysqli_query($conn, $sql)) {
 
+    //zet de informatie in een associative array
     $user = mysqli_fetch_assoc($result);
 
-    
-
+    //als het niets find dan terug naar account pagina
     if (is_null($user)) {
         header("location: account.php");
     }

@@ -25,7 +25,7 @@
   }
   .flex-containers-right-TL{
     grid-area: flex-containers-right-TL;
-    color: aliceblue;
+    color: #f0f8ff;
     text-align: center;
     grid-column-start: 1;
     grid-column-end: 1;
@@ -36,7 +36,7 @@
   }
   .flex-containers-right-TR{
     grid-area: flex-containers-right-TR;
-    color: aliceblue;
+    color: #f0f8ff;
     text-align: center;
     grid-column-start: 2;
     grid-row-end: 1;
@@ -50,7 +50,7 @@
   }
   .flex-containers-right-MID{
     grid-area: flex-containers-right-MID;
-    color: aliceblue;
+    color: #f0f8ff;
     text-align: center;
     padding-left: 10%;
     padding-right: 10%;
@@ -64,7 +64,7 @@
     grid-area: flex-containers-right-BR;
     grid-column-start: 2;
     grid-column-end: 2;
-    color: aliceblue;
+    color: #f0f8ff;
     text-align: center;
     padding-left: 10%;
     padding-right: 10%;
@@ -78,7 +78,7 @@
     grid-area: flex-containers-right-BL; 
     grid-column-start: 1;
     grid-row-end: 3;
-    color: aliceblue;
+    color: #f0f8ff;
     text-align: center;
     padding-left: 10%;
     padding-right: 10%;

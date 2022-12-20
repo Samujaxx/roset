@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
         $city = $_POST["city"];
 
         require 'includes/database.php';
-        
+        //alle waardes in de tabel zetten
         $sql = "UPDATE users SET 
         firstname = '$firstname', 
         lastname = '$lastname', 

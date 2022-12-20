@@ -28,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
+    color: #f0f8ff;
 }
 
 .buttons {
@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    color: aliceblue;
+    color: #f0f8ff;
 }
 
 .info {
@@ -45,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: baseline;
-    color: aliceblue;
+    color: #f0f8ff;
     font-weight: bold;
 }
 
@@ -70,7 +70,7 @@
     .info{
         grid-area: info;
         align-items: baseline;
-        color: aliceblue;
+        color: #f0f8ff;
         font-weight: bold;
         overflow: scroll;
         padding-left: 10%;
