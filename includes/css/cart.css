@@ -34,13 +34,27 @@
     "head head head"
     "options-title options-title item-title"
     "options options items"
-    ". button ."; 
+    " . button delete"; 
 }
 
 .button { grid-area: button; 
   display: flex;
   align-self: center;
   justify-self: center;
+}
+
+.delete{grid-area: delete; 
+  display: flex;
+  align-self: center;
+  justify-self: center;
+
+}
+.delete a{
+  color: black;
+  text-decoration: none;
+}
+.delete a:hover{
+  color: red;
 }
 
 .items { grid-area: items; 

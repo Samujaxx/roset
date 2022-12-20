@@ -72,8 +72,10 @@ if ($result = mysqli_query($conn, $sql)) {
                     </select><br>
                 </div>
                 <div class="button">
-                <input type="submit" name="submit" value="Plaats bestelling" style="background-color: rgb(6, 153, 221); color:black;">
+                    <input type="submit" name="submit" value="Plaats bestelling" style="background-color: rgb(6, 153, 221); color:black;">
                 </div>
+                
+                   <button class="delete"> <a  href="delete-cart.php">leeg winkelmandje</a> </button>
             </form>
 </body>
 
