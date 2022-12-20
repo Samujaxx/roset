@@ -72,7 +72,7 @@ if ($result = mysqli_query($conn, $sqledit)) {
                             <td><?php echo $order["pickup"] ?></td>
                             <td><?php echo $order["delivery"] ?></td>
                             <td><?php echo $order["isReceived"] ?></td>
-                            <td><a style="color: red;" href="includes/admin/order-delete.php?id=<?php echo $order.["order_id"] ?>" class="btn btn-danger">Delete</a></td>
+                            <td><a style="color: red;" href="includes/admin/order-delete.php?id=<?php echo $order["order_id"] ?>" class="btn btn-danger">Delete</a></td>
                             <td><a style="color: green;" href="order-edit.php?id=<?php echo $order["order_id"] ?>" class="btn btn-danger">update</a></td>
                         </tr>
                     <?php endforeach;?>
