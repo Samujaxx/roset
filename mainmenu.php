@@ -25,7 +25,9 @@
     <div class="flex-containers-left">
         <div class="logo"><img src="includes/images/LOGO.png" alt="LOGO"></div>
         <?php foreach ($flavour as $flavours) : ?>
+            <a class="none" href="add-flavor.php?id=<?php echo $flavours['id'] ?>">
             <div class="fotw"> Smaak Van de Week!</br><img class="showcaseImg" src="includes/images/flavors/<?php echo $flavours['image']?>.webp" alt="LOGO"></br><?php echo $flavours['name'] ?></div>
+            </a>
         <?php endforeach; ?>
         <div class="flavours">
             Populaire smaken!</br>
