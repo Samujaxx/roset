@@ -27,7 +27,7 @@ if (isset($_POST["submit"])) {
 
     foreach ($product as $prods) :
 
-        $sql = "INSERT INTO orders (user_id, product_id, orderdate, adress, pickup, delivery, name, city)
+        $sql = "INSERT INTO orders (user_id, product_id, orderdate, adress, pickup, delivery, customer_name, city)
                             VALUES ('$user','$prods', '$date', '$adress', '$pickup', '$delivery', '$naam', '$city')";
         mysqli_query($conn, $sql);
 
